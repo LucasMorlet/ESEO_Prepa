@@ -40,9 +40,6 @@ class GraphicsScene ( QGraphicsScene ) :
         self.removeItem ( self.ellipse_ennemi )
         self.init_dynamic_elements()
         self.update()
-            
-    def mousePressEvent ( self, event ) :
-        None
         
     def keyPressEvent ( self, event ) :
         dx = 0
@@ -58,12 +55,12 @@ class GraphicsScene ( QGraphicsScene ) :
             dx += 1
             
         self.scene.deplace_perso( dx, dy )
-        #self.reset_dynamic_elements()
         
     def keyReleaseEvent ( self, event ) :
-        dx = 0
-        dy = 0
-        #print ( "lâchée", event.key() )
+        None
+        
+    def mousePressEvent ( self, event ) :
+        None
         
         
         

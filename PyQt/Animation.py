@@ -1,6 +1,5 @@
 from MainWindow import *
 from Scene import *
-import threading
 
 app = QApplication.instance()
 if not app :

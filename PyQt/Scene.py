@@ -21,8 +21,13 @@ class Scene :
     def init_static_elements ( self ) :        
         self.arene = Arene ( 500, 500 )
         self.les_obstacles = []
-        self.les_obstacles.append ( Obstacle ( 200, 0, 100, 100 ) )
-        self.les_obstacles.append ( Obstacle ( 200, 400, 100, 100 ) )
+        self.les_obstacles.append ( Obstacle ( 200, 40, 20, 100 ) )
+        self.les_obstacles.append ( Obstacle ( 200, 360, 20, 100 ) )
+        self.les_obstacles.append ( Obstacle ( 280, 40, 20, 100 ) )
+        self.les_obstacles.append ( Obstacle ( 280, 360, 20, 100 ) )
+        self.les_obstacles.append ( Obstacle ( 200, 200, 100, 100 ) )
+        self.les_obstacles.append ( Obstacle ( 0, 400, 100, 100 ) )
+        self.les_obstacles.append ( Obstacle ( 400, 0, 100, 100 ) )
         
     def init_dynamic_elements ( self ) :
         
