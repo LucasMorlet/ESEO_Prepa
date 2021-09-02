@@ -2,6 +2,9 @@ import sys
 from PyQt5 import QtCore, QtGui
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWidgets import QVBoxLayout
+from PyQt5.QtWidgets import QHBoxLayout
+from PyQt5.QtWidgets import QGridLayout
+from PyQt5.QtWidgets import QFormLayout
 from PyQt5.QtWidgets import QWidget   
 
 # Les fenêtres
@@ -55,25 +58,32 @@ class MainWindow ( QMainWindow ) :
         QWidget.__init__ ( self )
         self.setWindowTitle ( "Exemples PyQt" )
         self.init_components()
+        self.init_style()
         self.init_layout()
         self.show()
         
     def init_components ( self ) :
         self.setCentralWidget ( QGroupBox() )
-        self.barre_menu = QMenuBar ( self )
-        self.setMenuBar( self.barre_menu )
-        self.menu_fichier = QMenu( "Fichier" )
-        self.barre_menu.addMenu ( self.menu_fichier )
-        self.sous_menu = QMenu ( "Sous-menu" )
-        self.menu_fichier.addMenu ( self.sous_menu )
-        self.action1 = QAction ( "Action" )
-        self.action2 = QAction ( "Action 2" )
-        self.sous_menu.addAction ( self.action1 )
-        self.sous_menu.addAction ( self.action2 )
+        self.bouton1 = QPushButton ( "Bouton 1" )
+        self.bouton2 = QPushButton ( "Bouton 2" )
+        self.bouton3 = QPushButton ( "Bouton 3" )
+        self.bouton4 = QPushButton ( "Bouton 4" )
+        
+        # text-align: left
+        
+    def init_style ( self ) :  
+        self.bouton1.setStyleSheet ( "font : bold 'Times New Roman'" )
+        self.bouton2.setStyleSheet ( "font : italic 'Times New Roman'" )
+        self.bouton3.setStyleSheet ( "font : bold italic 'Times New Roman'" )
+        self.bouton4.setStyleSheet ( "" )
         
     def init_layout ( self ) :
         self.layout = QVBoxLayout()
         self.centralWidget().setLayout ( self.layout )
+        self.layout.addWidget ( self.bouton1 )
+        self.layout.addWidget ( self.bouton2 )
+        self.layout.addWidget ( self.bouton3 )
+        self.layout.addWidget ( self.bouton4 )
         
 # Application principale        
 app = QApplication.instance()
